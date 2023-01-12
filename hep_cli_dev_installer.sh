@@ -33,7 +33,7 @@ read key
 echo -e "************************************************************"
 echo -e "\t ${GREEN} Installing Hepic-Installer a.k.a hep_cli ${NC}\n\t\t"
 echo -e "************************************************************"
-yum install hepic-installer
+yum install hepic-installer -y
 
 elif [ -n "$(command -v apt-get)" ];then
 
