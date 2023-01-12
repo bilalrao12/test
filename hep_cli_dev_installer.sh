@@ -4,8 +4,8 @@ NC='\033[0m'
 if [ -n "$(command -v yum)" ];then
 echo
 cat > /etc/yum.repos.d/qxip_hepic-dev.repo << 'EOF'
-[qxip_hepic]
-name=qxip_hepic
+[qxip_hepic-dev]
+name=qxip_hepic-dev
 baseurl=https://0000-0000-0000-rpm:@packagecloud.io/qxip/hepic-dev/rpm_any/rpm_any/$basearch
 repo_gpgcheck=1
 gpgcheck=0
@@ -15,8 +15,8 @@ sslverify=1
 sslcacert=/etc/pki/tls/certs/ca-bundle.crt
 metadata_expire=300
 
-[qxip_hepic-source]
-name=qxip_hepic-source
+[qxip_hepic-dev-source]
+name=qxip_hepic-dev-source
 baseurl=https://0000-0000-0000-rpm:@packagecloud.io/qxip/hepic-dev/rpm_any/rpm_any/SRPMS
 repo_gpgcheck=1
 gpgcheck=0
