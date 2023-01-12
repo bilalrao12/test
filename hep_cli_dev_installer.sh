@@ -6,22 +6,22 @@ echo
 cat > /etc/yum.repos.d/qxip_hepic-dev.repo << 'EOF'
 [qxip_hepic]
 name=qxip_hepic
-baseurl=https://0000-0000-0000-rpm:@packagecloud.io/qxip/hepic/rpm_any/rpm_any/$basearch
+baseurl=https://0000-0000-0000-rpm:@packagecloud.io/qxip/hepic-dev/rpm_any/rpm_any/$basearch
 repo_gpgcheck=1
 gpgcheck=0
 enabled=1
-gpgkey=https://0000-0000-0000-rpm:@packagecloud.io/qxip/hepic/gpgkey
+gpgkey=https://0000-0000-0000-rpm:@packagecloud.io/qxip/hepic-dev/gpgkey
 sslverify=1
 sslcacert=/etc/pki/tls/certs/ca-bundle.crt
 metadata_expire=300
 
 [qxip_hepic-source]
 name=qxip_hepic-source
-baseurl=https://0000-0000-0000-rpm:@packagecloud.io/qxip/hepic/rpm_any/rpm_any/SRPMS
+baseurl=https://0000-0000-0000-rpm:@packagecloud.io/qxip/hepic-dev/rpm_any/rpm_any/SRPMS
 repo_gpgcheck=1
 gpgcheck=0
 enabled=1
-gpgkey=https://0000-0000-0000-rpm:@packagecloud.io/qxip/hepic/gpgkey
+gpgkey=https://0000-0000-0000-rpm:@packagecloud.io/qxip/hepic-dev/gpgkey
 sslverify=1
 sslcacert=/etc/pki/tls/certs/ca-bundle.crt
 metadata_expire=300
@@ -38,8 +38,8 @@ yum install hepic-installer
 elif [ -n "$(command -v apt-get)" ];then
 
 cat > /etc/apt/sources.list.d/qxip_hepic-dev.list << 'EOF'
-deb https://0000-0000-0000-deb:@packagecloud.io/qxip/hepic/any/ any main
-deb-src https://0000-0000-0000-deb:@packagecloud.io/qxip/hepic/any/ any main
+deb https://0000-0000-0000-deb:@packagecloud.io/qxip/hepic-dev/any/ any main
+deb-src https://0000-0000-0000-deb:@packagecloud.io/qxip/hepic-dev/any/ any main
 EOF
 
 echo -e "Please insert the provided key to install hep_cli:"
