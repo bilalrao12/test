@@ -36,7 +36,7 @@ echo -e "************************************************************"
 yum install hepic-installer -y
 
 elif [ -n "$(command -v apt-get)" ];then
-
+apt-get install gnupg
 cat > /etc/apt/sources.list.d/qxip_hepic-dev.list << 'EOF'
 deb https://0000-0000-0000-deb:@packagecloud.io/qxip/hepic-dev/any/ any main
 deb-src https://0000-0000-0000-deb:@packagecloud.io/qxip/hepic-dev/any/ any main
@@ -45,6 +45,7 @@ EOF
 echo -e "Please insert the provided key to install hep_cli:"
 read key
         sed -i "s/0000-0000-0000-deb/$key/g" /etc/apt/sources.list.d/qxip_hepic-dev.list
+        curl -L https://$key:@packagecloud.io/qxip/hepic-dev/gpgkey | apt-key add -
 
   echo -n "Running apt-get update... "
   apt-get update &> /dev/null
