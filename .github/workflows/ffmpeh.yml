@@ -35,4 +35,4 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: bilalrao12/alpine_ffmpeg:latest
+        tags: alpine_ffmpeg:latest
