@@ -28,11 +28,14 @@ jobs:
       with:
         images: |
           ghcr.io/${{ github.repository }}/alpine_ffmpeg
+        tags: |
+          latest
           
     - name: Build and push
-      uses: docker/build-push-action@v6
+      uses: docker/build-push-action@v5.4.0
       with:
         context: .
         file: ./Dockerfile
         push: true
-        tags: latest
+        tags: ${{ steps.meta.outputs.tags }}
+        labels: ${{ steps.meta.outputs.labels }}
