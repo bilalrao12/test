@@ -27,7 +27,7 @@ jobs:
       uses: docker/metadata-action@v5.5.1
       with:
         images: |
-          ghcr.io/${{ github.repository }}
+          ghcr.io/${{ github.repository }}/alpine_ffmpeg
           
     - name: Build and push
       uses: docker/build-push-action@v6
@@ -35,4 +35,4 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: alpine_ffmpeg:latest
+        tags: latest
